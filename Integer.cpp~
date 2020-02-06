@@ -1,0 +1,121 @@
+#include "Integer.h"
+
+namespace cosc326 {
+
+    Integer::Integer() {
+        data.push_back(0);
+    }
+    Integer::Integer(const Integer& i) {
+        int divres = 0;
+        int divrem = 0;
+        if(i>=0){
+            sign = 1;
+        }else{
+            sign = -1;
+        }
+        while(divres>0 & divrem >0){
+            divres = (int)i /10;
+            divrem = i % 10;
+            i = divrem;
+            data.push_back(divres);
+            std::cout<<divres<<"\n";
+        }
+    }
+    Integer::Integer(const std::string& s) {
+        
+    }
+    Integer::~Integer() {
+        
+    }
+    
+    Integer& Integer::operator=(const Integer& i) {
+        return *this;
+    }
+    
+    Integer Integer::operator-() const {
+        return Integer(*this);
+    }
+    
+    Integer Integer::operator+() const {
+        return Integer(*this);
+    }
+    
+    Integer& Integer::operator+=(const Integer& i) {
+        return *this;
+    }
+    
+    Integer& Integer::operator-=(const Integer& i) {
+        return *this;
+    }
+    
+    Integer& Integer::operator*=(const Integer& i) {
+        return *this;
+    }
+    
+    Integer& Integer::operator/=(const Integer& i) {
+        return *this;
+    }
+
+    Integer& Integer::operator%=(const Integer& i) {
+        return *this;
+    }
+
+    Integer operator+(const Integer& lhs, const Integer& rhs) {
+        return lhs;
+    }
+
+    Integer operator-(const Integer& lhs, const Integer& rhs) {
+        return lhs;
+    }
+
+    Integer operator*(const Integer& lhs, const Integer& rhs) {
+        return lhs;
+    }
+
+    Integer operator/(const Integer& lhs, const Integer& rhs) {
+        return lhs;
+    }
+
+    Integer operator%(const Integer& lhs, const Integer& rhs) {
+        return lhs;
+    }
+
+
+    std::ostream& operator<<(std::ostream& os, const Integer& i) {
+        return os;
+    }
+
+    std::istream& operator>>(std::istream& is, Integer& i) {
+        return is;
+    }
+
+    bool operator<(const Integer& lhs, const Integer& rhs) {
+        return true;
+    }
+
+    bool operator> (const Integer& lhs, const Integer& rhs) {
+        return true;
+    }
+
+    bool operator<=(const Integer& lhs, const Integer& rhs) {
+        return true;
+    }
+
+    bool operator>=(const Integer& lhs, const Integer& rhs) {
+        return true;
+    }
+
+    bool operator==(const Integer& lhs, const Integer& rhs) {
+        return true;
+    }
+
+    bool operator!=(const Integer& lhs, const Integer& rhs) {
+        return true;
+    }
+
+
+    Integer gcd(const Integer& a, const Integer& b) {
+        return a;
+    }
+
+}

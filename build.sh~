@@ -1,0 +1,3 @@
+g++ -c test.cpp
+g++ -c Rational.cpp
+g++ -c Integer.cpp
