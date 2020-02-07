@@ -11,16 +11,18 @@ namespace cosc326 {
 	class Integer {
 
 	public:
+            std::vector<int> data;
+            int sign;
+            int length;
             Integer();                             // Integer i;
             Integer(const Integer& i);             // Integer j(i);
             Integer(const std::string& s);         // Integer k("123");
             
             ~Integer();
-            
             Integer& operator=(const Integer& i);  // j = i;
             
             // Unary operators
-            Integer operator-() const;                   // -j;
+            Integer operator-();                   // -j;
             Integer operator+() const;                   // +j;
             
             // Arithmetic assignment operators
@@ -33,10 +35,9 @@ namespace cosc326 {
             // lhs < rhs -- a 'friend' means operator isn't a member, but can access the private parts of the class.
             // You may need to make some other functions friends, but do so sparingly.
             friend bool operator<(const Integer& lhs, const Integer& rhs);
-            
+
 	private:
-            std::vector<int> data;
-            std::string sign;
+
 	};
 	// Binary operators
 	Integer operator+(const Integer& lhs, const Integer& rhs); // lhs + rhs;
